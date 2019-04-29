@@ -1,0 +1,180 @@
+$inputHeight: 35px;
+$titleSize: 19px;
+$subTitleSize: 75%;
+$breakpoint-tablet: 800px;
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  background-color: #4cd0f1;
+  position: relative;
+  &__title {
+    font-size: $titleSize;
+    text-align: center;
+  }
+  &__subTitle {
+    text-align: center;
+    font-size: $subTitleSize;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &--input {
+      margin-right: 15px;
+      margin-bottom: 15px;
+      border: none;
+      padding-right: 0px !important;
+      padding: 10px;
+      width: 215px;
+      font-size: 11px;
+      height: $inputHeight;
+      border-radius: 3%;
+    }
+    &--button {
+      margin-bottom: 15px;
+      height: $inputHeight;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      font-weight: 680;
+      letter-spacing: 0.5px;
+      font-size: 12px;
+      padding: 0px 21px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: #0dacd4;
+      }
+    }
+  }
+}
+
+.contentDisplay {
+  padding-top: 60px;
+  width: 100%;
+  &__title {
+    text-align: center;
+    font-size: $titleSize;
+    font-weight: 700;
+    opacity: 0.8;
+  }
+  &__subTitle {
+    text-align: center;
+    font-size: $subTitleSize;
+  }
+  &__data {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    table {
+      width: 36%;
+      margin-right: 60px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #0000007e
+    }
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    background-color: #4cd0f1;
+    position: relative;
+    &__title {
+      font-size: $titleSize;
+      text-align: center;
+    }
+    &__subTitle {
+      text-align: center;
+      font-size: $subTitleSize;
+    }
+    &__form {
+      display: flex;
+      width: 80%;
+      align-items: flex-start;
+      flex-direction: column;
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &--input {
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: none;
+        position: relative;
+        padding-right: 0px !important;
+        padding: 10px;
+        width: 100%;
+        font-size: 11px;
+        height: $inputHeight;
+        border-radius: 3%;
+      }
+      &--button {
+        margin-bottom: 15px;
+        width: 120px;
+
+        height: $inputHeight;
+        border: 2px solid white;
+        background-color: transparent;
+        color: white;
+        font-weight: 680;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+        padding: 0px 21px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .contentDisplay {
+    padding-top: 60px;
+    width: 100%;
+    &__title {
+      text-align: center;
+      font-size: $titleSize;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    &__subTitle {
+      text-align: center;
+      font-size: $subTitleSize;
+    }
+    &__data {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      table {
+        width: 100%;
+        font-size: 12px;
+        margin-right: 0px;
+        font-weight: 600;
+        color: #0000007e;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+}
+
+
+
+

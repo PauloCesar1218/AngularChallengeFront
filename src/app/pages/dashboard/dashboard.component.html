@@ -1,0 +1,52 @@
+<div class="dashboard-header">
+      <h1 class="dashboard-header__title text-white">CADASTRE-SE</h1>
+      <p class="dashboard-header__subTitle text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <form class="dashboard-header__form" #form="ngForm" (submit)="onSubmit($event, form)">
+      <input class="dashboard-header__form--input" type="text" name="nome" id="" placeholder="Nome" ngModel>
+      <input class="dashboard-header__form--input" type="text" name="sobrenome" id="" placeholder="Sobrenome" ngModel>
+      <input class="dashboard-header__form--input" type="number" name="participacao" id="" placeholder="Participação" ngModel>
+      <button class="dashboard-header__form--button" type="submit">ENVIAR</button>
+    </form>
+
+
+</div>
+<div class="contentDisplay">
+  <h2 class="contentDisplay__title">DADOS</h2>
+  <p class="contentDisplay__subTitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <div class="contentDisplay__data">
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Participação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let info of information">
+                <th scope="row" *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.id }}</th>
+                <td *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.nome }}</td>
+                <td *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.sobrenome }}</td>
+                <td *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.participacao }}%</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <div style="display: block">
+            <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              [options]="chartOptions"
+              [colors]="chartColors"
+              width="361" height="180">
+            </canvas>
+          </div>
+
+  </div>
+</div>
+
+
