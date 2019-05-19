@@ -3,12 +3,14 @@
       <p class="dashboard-header__subTitle text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <form class="dashboard-header__form" #form="ngForm" (submit)="onSubmit($event, form)">
       <input class="dashboard-header__form--input" type="text" name="nome" id="" placeholder="Nome" ngModel>
-      <input class="dashboard-header__form--input" type="text" name="sobrenome" id="" placeholder="Sobrenome" ngModel>
+      <input class="dashboard-header__form--input" type="text" name="sobreNome" id="" placeholder="Sobrenome" ngModel>
       <input class="dashboard-header__form--input" type="number" name="participacao" id="" placeholder="Participação" ngModel>
       <button class="dashboard-header__form--button" type="submit">ENVIAR</button>
     </form>
-
-
+    <div #alert [ngStyle]="{'background-color': alertColor}" class="alert alertComponent no-js" role="alert">
+        <span class="text-white alertComponent__text">{{ alertMessage }}</span>
+        <button class="alertComponent__button" (click)="closeAlert($event)">OK</button>
+    </div>
 </div>
 <div class="contentDisplay">
   <h2 class="contentDisplay__title">DADOS</h2>
@@ -25,11 +27,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let info of information">
-                <th scope="row" *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.id }}</th>
-                <td *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.nome }}</td>
-                <td *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.sobrenome }}</td>
-                <td *ngIf="info.nome && info.sobrenome && info.participacao">{{ info.participacao }}%</td>
+              <tr *ngFor="let info of infoArr">
+                <th scope="row">{{ info?.id }}</th>
+                <td>{{ info?.nome }}</td>
+                <td>{{ info?.sobreNome }}</td>
+                <td>{{ info?.participacao }}%</td>
               </tr>
             </tbody>
           </table>

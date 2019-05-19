@@ -87,87 +87,53 @@ $breakpoint-tablet: 800px;
     }
   }
 }
+.alertComponent {
+  min-height: 100px;
+  width: max-content;
+  position: fixed;
+  top: 20px;
+  &__button {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background-color: rgb(0, 255, 68);
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: rgb(0, 156, 42);
+    }
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .dashboard-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-top: 15px;
-    background-color: #4cd0f1;
-    position: relative;
-    &__title {
-      font-size: $titleSize;
-      text-align: center;
-    }
-    &__subTitle {
-      text-align: center;
-      font-size: $subTitleSize;
-    }
     &__form {
-      display: flex;
       width: 80%;
       align-items: flex-start;
       flex-direction: column;
-      input[type=number]::-webkit-inner-spin-button,
-      input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
       &--input {
-        margin-right: 15px;
-        margin-bottom: 15px;
-        border: none;
         position: relative;
-        padding-right: 0px !important;
-        padding: 10px;
         width: 100%;
-        font-size: 11px;
-        height: $inputHeight;
-        border-radius: 3%;
       }
       &--button {
-        margin-bottom: 15px;
         width: 120px;
-
-        height: $inputHeight;
-        border: 2px solid white;
-        background-color: transparent;
-        color: white;
-        font-weight: 680;
-        letter-spacing: 0.5px;
-        font-size: 12px;
-        padding: 0px 21px;
-        &:focus {
-          outline: none;
-        }
       }
     }
   }
   .contentDisplay {
-    padding-top: 60px;
-    width: 100%;
-    &__title {
-      text-align: center;
-      font-size: $titleSize;
-      font-weight: 700;
-      opacity: 0.8;
-    }
-    &__subTitle {
-      text-align: center;
-      font-size: $subTitleSize;
-    }
     &__data {
-      width: 100%;
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       table {
         width: 100%;
         font-size: 12px;
         margin-right: 0px;
-        font-weight: 600;
-        color: #0000007e;
         margin-bottom: 15px;
       }
     }
@@ -175,6 +141,16 @@ $breakpoint-tablet: 800px;
 
 }
 
+.animation {
+  animation-name: alertSlide;
+  animation-duration: 2s;
+}
 
+.no-js {
+  display: none;
+}
 
-
+@keyframes alertSlide {
+  from {top: -300px;}
+  to {top: 20px;}
+}
